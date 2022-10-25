@@ -1,0 +1,8 @@
+<h2> 商品一覧 </h2>
+<% @products.each do |product| %>
+    商品名：<%= product.name %><br>
+    価格　：<%= product.price %> 円<br>
+    <%= link_to '削除', "/products/#{product.id}", method: :delete %><br>
+    <%= link_to 'カートに追加', new_cartitem_path(product_id: product.id) %><hr>
+<% end %>
+<%= link_to '商品登録', new_product_path %>

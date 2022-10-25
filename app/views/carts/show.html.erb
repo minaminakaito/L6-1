@@ -1,0 +1,10 @@
+<h2> カート </h2>
+<% @carts.each do |cartitem| %>
+    <p>
+        商品名：<br>
+        価格　：<br>
+        数量　：<%= cartitem.qty %><br>
+        <%= link_to '削除', "/cartitems/#{cartitem.id}", method: :delete %>
+    </p><hr>
+<% end %>
+<%= link_to '戻る', root_path %>
